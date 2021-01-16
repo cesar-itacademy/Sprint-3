@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicis Javascript</title>
+</head>
+<body>
+    <!--Exercici 1 - L'exercici consisteix a crear un fitxer anomenat ciber.html i mostrar per consola un 'Hola mundo' (per activar la consola ->; F12). Pista: Console.log() -->
+    <!--Exercici 2 - Crea un alert que mostri el teu nom:-->
+<h1>Exercicis Sprint 3</h1> <br>
+<div class="container">
+    <div class="botons">
+        <input type="button" onclick="primer()" value="Exercici 1"/><br>
+        <input type="button" onclick="segon()" value="Exercici 2"/><br>
+        <input type="button" onclick="tercer()" value="Exercici 3"/><br>
+        <input type="button" onclick="cuart()" value="Exercici 4"/><br>
+        <input type="button" onclick="cinque()" value="Exercici 5"/><br>
+        <input type="button" onclick="sise()" value="Exercici 6"/><br>
+        <input type="button" onclick="sete()" value="Exercici 6"/><br>
+        <input type="button" onclick="vuite()" value="Exercici 6"/><br> 
+    </div>
+</div>
+
+<p id="mensaje"></p>
+<script>
+    // 1 - Mostrar Hola mundo per console log
+    function primer() {
+        console.log("Hola mundo");
+    }
+
+    // 2 - Crea un alert que mostri el teu nom
+    function segon() {
+        alert("Cèsar és el meu nom!");
+    }
+
+    // 3 - Crea una variable que contingui el teu nom i un altre que contingui el teu cognom.
+    function tercer() {
+        let nom = 'Cesar';
+        let cognom = 'Gutierrez';
+        console.log("El meu nom es: "+ nom+" "+cognom);
+    }
+
+    // 4 - Crea dos variables amb dos números i fes una suma entre ells.
+    function cuart() {
+        let numA = 55;
+        let numB = 33;
+        let resultat = parseInt(numA + numB);
+        console.log("La suma entre "+numA+" i "+numB+" es igual a "+ resultat);
+    }
+
+    // 5 - Crea una variable nota_examen juntament amb un alert que ens digui si l’examen ha estat aprovat o no juntament amb la nota. (caldrà utilitzar un condicional IF)
+    function cinque() {
+        let nota_examen = 4.6;
+        let resultat = "Ohhh has suspendido";
+        if (nota_examen >= 5) {
+            resultat = "Genial!!! has aprobado";
+        }
+        alert(resultat+", el exámen con un "+nota_examen);
+    }
+
+    // 6 - Reemplaça la paraula blau per la paraula verd del següent text Tinc un cotxe de color blau. Després intenta fer-ho remplaçant les o per les u.
+    function sise() {
+        let frase = "Tinc un cotxe de color blau";
+        fraseMin = frase.toLowerCase();
+
+    }
+
+    // 7 - Donat el seguit llistat d'objectes 'taula', 'cadira', 'ordinador', 'libreta', per un bucle que mostri per pantalla cada objecte i la seva posició al llistat.
+    function sise() {
+        let frase = "Tinc un cotxe de color blau";
+        fraseMin = frase.toLowerCase();
+
+    }
+
+    // 8 - Crea una funció anomenada calculadora que tingui com a entrada els següents paràmetres: operador, valor1 i valor2. 
+    //Estructura de la funció que faci sumes, restes i multiplicacions. El resultat haurà de ser mostrar per pantalla.
+    function sise() {
+        let frase = "Tinc un cotxe de color blau";
+        fraseMin = frase.toLowerCase();
+
+    }
+
+
+
+
+        
+/*          function compara() {
+            let frase = document.getElementById("frase").value;
+            let fraseMay = frase.toUpperCase();
+            let fraseMin = frase.toLowerCase();
+            let mensaje;
+            if (frase == fraseMay){
+                mensaje = "Todas las letras son mayúsculas";
+            } else if (frase == fraseMin) {
+                mensaje = "Todas las letras son minúsculas";
+            } else {
+                mensaje = "Has escrito mayúsculas y minúsculas!";
+            }
+            document.getElementById("mensaje").innerHTML= mensaje;
+        } 
+ */
+</script>
+</body>
+</html>
