@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici Lletres repetides</title>
+</head>
+<body>
+    <h1>Exercicis Sprint 3 - Lletre repetides</h1> <br>
+    <div class="container">
+        <div class="botons">
+            <input type="button" onclick="primer()" value="Exercici 1"/><br>
+            <input type="button" onclick="segon()" value="Exercici 2"/><br>
+            <input type="button" onclick="tercer()" value="Exercici 3"/><br>
+            <input type="button" onclick="cuart()" value="Exercici 4"/><br>
+        
+        </div>
+    </div>
+
+    <script>
+    //L’exercici consisteix en mostrar per consola quantes vegades apareix cada lletra del teu nom i cognoms amb diferents variants (fases).
+
+    // 1 - Crea un array amb el teu nom on cada posició correspongui a una lletra.
+    //Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.
+    function vuite() {
+        let numA = parseInt(document.getElementById('numA').value);
+        let numB = parseInt(document.getElementById('numB').value);
+        let operador = (document.getElementById('operador').value);
+        document.getElementById("resultatCalc").innerHTML = calculadora(numA, numB, operador);
+    }
+    
+    function calculadora(numA, numB, operador) {
+        let resultatCalc; 
+        switch (operador) {
+            case "+":
+                resultatCalc = (numA + numB);
+                break;
+            case "-":
+                resultatCalc = (numA - numB);
+                break;
+            case "*":
+                resultatCalc = (numA * numB);
+                break;
+            case "/":
+                if (numB == 0) {
+                    resultatCalc = 'No es pot dividir per 0';
+                } else { resultatCalc = (numA / numB); }
+                break;
+            default: 
+                resultatCalc ='No ha introuït un operador válid';
+        }
+        return resultatCalc; 
+    }
+    </script>
+    
+</body>
+</html>
