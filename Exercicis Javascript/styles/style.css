@@ -1,0 +1,15 @@
+/* Exercicis Javascript bàsic */
+
+.container {
+
+
+    background-color: rgb(46, 44, 44);
+    max-width: 450px;
+    margin-bottom: 5rem;
+    padding-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+
