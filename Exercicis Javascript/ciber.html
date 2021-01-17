@@ -17,12 +17,21 @@
         <input type="button" onclick="cuart()" value="Exercici 4"/><br>
         <input type="button" onclick="cinque()" value="Exercici 5"/><br>
         <input type="button" onclick="sise()" value="Exercici 6"/><br>
-        <input type="button" onclick="sete()" value="Exercici 6"/><br>
-        <input type="button" onclick="vuite()" value="Exercici 6"/><br> 
+        <input type="button" onclick="sete()" value="Exercici 7"/><br>
     </div>
 </div>
+<div class="calculadora">
+    <h2>Calculadora - Nivell 2</h2>
+    Introdueix el primer valor:<br>
+    <input type ="number" id= "numA"/><br>
+    Introdueix el segon valor:<br>
+    <input type ="number" id= "numB"/><br>   
+    Introdueix l'operador (+, - , *, /)  <br>
+    <input type ="text" id= "operador"/><br>
+    <input type="button" onclick="vuite()" value="Exercici 8"/><br>
+    <p id="resultatCalc"></p>
+</div>
 
-<p id="mensaje"></p>
 <script>
     // 1 - Mostrar Hola mundo per console log
     function primer() {
@@ -62,44 +71,53 @@
     // 6 - Reemplaça la paraula blau per la paraula verd del següent text Tinc un cotxe de color blau. Després intenta fer-ho remplaçant les o per les u.
     function sise() {
         let frase = "Tinc un cotxe de color blau";
-        fraseMin = frase.toLowerCase();
-
+        let canviParaula = frase.replace('blau','verd');
+        console.log(canviParaula);
+        let canviLletra = frase.replace(/o/g,'u');
+        console.log(canviLletra);
     }
 
     // 7 - Donat el seguit llistat d'objectes 'taula', 'cadira', 'ordinador', 'libreta', per un bucle que mostri per pantalla cada objecte i la seva posició al llistat.
-    function sise() {
-        let frase = "Tinc un cotxe de color blau";
-        fraseMin = frase.toLowerCase();
-
+    function sete() {
+        let llistat = ['taula', 'cadira', 'ordinador', 'llibreta'];
+        let i;
+        for (i = 0; i < llistat.length; i++) {
+            console.log(`L'objecte ${llistat[i]} està a la poisició ${i}`);
+        }
     }
 
     // 8 - Crea una funció anomenada calculadora que tingui com a entrada els següents paràmetres: operador, valor1 i valor2. 
     //Estructura de la funció que faci sumes, restes i multiplicacions. El resultat haurà de ser mostrar per pantalla.
-    function sise() {
-        let frase = "Tinc un cotxe de color blau";
-        fraseMin = frase.toLowerCase();
-
+    function vuite() {
+        let numA = parseInt(document.getElementById('numA').value);
+        let numB = parseInt(document.getElementById('numB').value);
+        let operador = (document.getElementById('operador').value);
+        document.getElementById("resultatCalc").innerHTML = calculadora(numA, numB, operador);
     }
-
-
-
-
-        
-/*          function compara() {
-            let frase = document.getElementById("frase").value;
-            let fraseMay = frase.toUpperCase();
-            let fraseMin = frase.toLowerCase();
-            let mensaje;
-            if (frase == fraseMay){
-                mensaje = "Todas las letras son mayúsculas";
-            } else if (frase == fraseMin) {
-                mensaje = "Todas las letras son minúsculas";
-            } else {
-                mensaje = "Has escrito mayúsculas y minúsculas!";
-            }
-            document.getElementById("mensaje").innerHTML= mensaje;
-        } 
- */
+    
+    function calculadora(numA, numB, operador) {
+        let resultatCalc; 
+        switch (operador) {
+            case "+":
+                resultatCalc = (numA + numB);
+                break;
+            case "-":
+                resultatCalc = (numA - numB);
+                break;
+            case "*":
+                resultatCalc = (numA * numB);
+                break;
+            case "/":
+                if (numB == 0) {
+                    resultatCalc = 'No es pot dividir per 0';
+                } else { resultatCalc = (numA / numB); }
+                break;
+            default: 
+                resultatCalc ='No ha introuït un operador válid';
+        }
+        return resultatCalc; 
+    }
+       
 </script>
 </body>
 </html>
