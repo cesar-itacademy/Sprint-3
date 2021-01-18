@@ -3,55 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercici Lletres repetides</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- CSS Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Exercicis Javascript</title>
 </head>
 <body>
-    <h1>Exercicis Sprint 3 - Lletre repetides</h1> <br>
+    
+    <h1 class="text-center">Exercicis Sprint 3</h1> <br>
+    <!-- Botones ejercicios 1-5 Lletres repetides -->
     <div class="container">
-        <div class="botons">
-            <input type="button" onclick="primer()" value="Exercici 1"/><br>
-            <input type="button" onclick="segon()" value="Exercici 2"/><br>
-            <input type="button" onclick="tercer()" value="Exercici 3"/><br>
-            <input type="button" onclick="cuart()" value="Exercici 4"/><br>
-        
+        <div class="row">
+            <div class="btn">
+                <div class="btn-group-vertical btn-group-lg" role="group">
+                    <input type="button" class="btn btn-primary" onclick="primer()" value="Exercici 1"/><br>
+                    <input type="button" class="btn btn-primary" onclick="segon()" value="Exercici 2"/><br>
+                    <input type="button" class="btn btn-primary" onclick="tercer()" value="Exercici 3"/><br>
+                    <input type="button" class="btn btn-primary" onclick="cuart()" value="Exercici 4"/><br>
+                    <input type="button" class="btn btn-primary" onclick="cinque()" value="Exercici 5"/><br>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-    //L’exercici consisteix en mostrar per consola quantes vegades apareix cada lletra del teu nom i cognoms amb diferents variants (fases).
-
-    // 1 - Crea un array amb el teu nom on cada posició correspongui a una lletra.
-    //Fes un bucle que recorri aquest array i mostri per consola cadascuna de les lletres.
-    function vuite() {
-        let numA = parseInt(document.getElementById('numA').value);
-        let numB = parseInt(document.getElementById('numB').value);
-        let operador = (document.getElementById('operador').value);
-        document.getElementById("resultatCalc").innerHTML = calculadora(numA, numB, operador);
-    }
+       
+   
+    </div>
     
-    function calculadora(numA, numB, operador) {
-        let resultatCalc; 
-        switch (operador) {
-            case "+":
-                resultatCalc = (numA + numB);
-                break;
-            case "-":
-                resultatCalc = (numA - numB);
-                break;
-            case "*":
-                resultatCalc = (numA * numB);
-                break;
-            case "/":
-                if (numB == 0) {
-                    resultatCalc = 'No es pot dividir per 0';
-                } else { resultatCalc = (numA / numB); }
-                break;
-            default: 
-                resultatCalc ='No ha introuït un operador válid';
-        }
-        return resultatCalc; 
-    }
-    </script>
-    
+    <!-- Script JS -->
+    <script src="scripts/script.js"></script>
 </body>
 </html>
