@@ -8,10 +8,10 @@
 function primer() {
     let nom = "CESAR"
     let array = [];
-    //Introduce en la array los carácteres del string 1 a 1
+    //Introduce en la array los carácteres del string 1 a 1.
     array = nom.split("");
     let i;
-    //Recorre el array y lo muestra por consola
+    //Recorre el array y lo muestra por consola.
     for (i = 0; i < array.length; i++) {
         console.log(array[i]);
     }
@@ -25,23 +25,23 @@ function segon() {
     let array = [];
     let lletra;
     let vocal;
-    //Introduce en la array los carácteres del string 1 a 1
+    //Introduce en la array los carácteres del string 1 a 1.
     array = nom.split("");
     let i;
     //Recorre el array 
     for (i = 0; i < array.length; i++) {
         lletra = array[i];
-        //Comprueba si el elemento es un número
+        //Comprueba si el elemento es un número.
         if (isNaN(lletra)) {
-            //Si no es un número buscamos el patrón de vocales en el elemento
+            //Si no es un número buscamos el patrón de vocales en el elemento.
             vocal = lletra.search(/[aeiou]/ig);
             
-            //Comprueba si es vocal o consonante
+            //Comprueba si es vocal o consonante.
             if (vocal) {
                 console.log(`He trobat la consonat: ${lletra}`);
             } else { console.log(`He trobat la vocal: ${lletra}`); }
 
-            //Si es número se lo indicamos al usuario
+            //Si es número se lo indicamos al usuario.
         } else { console.log(`Els noms de persona no contenen el número ${lletra}`); }
     }
 }
@@ -49,22 +49,52 @@ function segon() {
 // 3 - Emmagatzemar en un Map les lletres de l'array y el nombre de vegades que apareixen.
 
 function tercer() {
-    let nom = "CESAR"
+    let nom = "CESAR";
     let array = [];
-    //Introduce en la array los carácteres del string 1 a 1
+    let contador;
+    // Creamos el objeto map.
+    let aMap = new Map();
+    //Introduce en la array los carácteres del string 1 a 1.
     array = nom.split("");
     let i;
-    //Recorre el array y lo muestra por consola
+    let j;
+    //Recorre el array con 
     for (i = 0; i < array.length; i++) {
-        console.log(array[i]);
+        //Inicializa contador.
+        contador = 0;
+        //Comparamos si los elementos del array se repiten.
+        for (j=0; j < array.length; j++) {
+           //Si el elemento se repite incrementamos contador.
+            if (array[j]==array[i]) {
+                contador++
+            }
+            //Guardamos el elemento y el n veces que se repite en el map.
+            aMap.set(array[i],contador);
+        }
+    
     }
+    console.log(aMap);
 }
 
 
 
 // 4 - Crea una altra array amb el teu cognom on cada posició correspongui a una lletra.
 //Fusiona els dos arrays en un. A més, afegeix una posició amb un espai buit entre la primera i la segona. És a dir, partim de 'array name i surname i al acabar l’execució només tindrem una que es dirà fullName.
+function cuart() {
+    let name = ["C","E","S","A","R"];
+    let surname = ["G","U","T","I","E","R","R","E","Z"];
+    let fullname = [];
+    //Añadimos un espacio al final del array nombre
+    name.push (" ");
+    //Concatenamos los arrays name y surname
+    fullname = name.concat(surname);
+    console.log(fullname);
 
+
+
+
+    
+}
 
 // Nivell 2 // 
 //Crea una funció que retorni un array amb tots els email (sense repetir) del següent text:
@@ -78,6 +108,7 @@ function cinque() {
     console.log(JSON.stringify(uniq(array)));
     
 }
+//funcion que usando el método Set devuelve un array sin elementos repetidos.
 function uniq(a) {
     return Array.from(new Set(a));
  }
